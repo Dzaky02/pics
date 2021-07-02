@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' show get;
 import 'models/image_model.dart';
 import 'dart:convert';
+import 'widgets/image_list.dart';
 
 void main() {
   runApp(MyApp());
@@ -52,20 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
-      ),
+      body: ImageList(images),
       floatingActionButton: FloatingActionButton(
         onPressed: _fetchImage,
         tooltip: 'Increment',
